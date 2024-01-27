@@ -10,22 +10,6 @@ typedef tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_up
 
 class Solution {
 public:
-    bool IsSubStr(string last , string str) {
-        int n = last.size() , m = str.size();
-
-        if(m > n) return false;
-        int i = m-1 , j = n-1;
-        while(i >= 0) {
-            if(str[i] == last[j]) {
-                i--;
-                j--;
-            }
-
-            else return false;
-        }
-
-        return true;
-    }
     int minimumLengthEncoding(vector<string>& words) {
         sort(words.begin(), words.end(), []
         (const string& first, const string& second){
